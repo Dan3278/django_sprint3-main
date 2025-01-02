@@ -1,0 +1,18 @@
+<article>
+  <div class="container py-5">
+    <ul>
+      <li>Место: {{ post.location }}</li>
+      <li>Дaта: {{ post.date }}</li>
+      <li>Kатегория: <a href="{% url 'blog:category_posts' post.category %}">
+          {{ post.category}}</a>
+      </li>
+    </ul>
+    {% if request.resolver_match.view_name == 'blog:post_detail' %}
+      <p>{{ post.text|linebreaksbr }}</p>
+    {% endif %}
+    {% if request.resolver_match.view_name == 'blog:index' %}
+      <p>{{ post.text|linebreaksbr|truncatewords:10 }}</p>
+      <a href="{% url 'blog:post_detail' post.id %}">читать полный текст</a>
+    {% endif %}
+  <div>
+</article>
