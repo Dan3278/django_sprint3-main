@@ -1,5 +1,4 @@
 from django.contrib import admin
-from django.utils.translation import gettext_lazy as _
 from django.db import models
 from .models import Category, Post, Location
 
@@ -22,12 +21,12 @@ class CategoryAdmin(admin.ModelAdmin):
 
     formfield_overrides = {
         models.BooleanField: {
-            'help_text': _("Снимите галочку, чтобы скрыть публикацию.")
+            'help_text': ('Снимите галочку, чтобы скрыть публикацию.')
         },
         models.SlugField: {
-            'help_text': _(
-                "Идентификатор страницы для URL; разрешены символы "
-                "латиницы, цифры, дефис и подчёркивание."
+            'help_text': (
+                'Идентификатор страницы для URL; разрешены символы '
+                'латиницы, цифры, дефис и подчёркивание.'
             )
         },
     }
@@ -40,7 +39,7 @@ class LocationAdmin(admin.ModelAdmin):
 
     formfield_overrides = {
         models.BooleanField: {
-            'help_text': _("Снимите галочку, чтобы скрыть публикацию.")
+            'help_text': ('Снимите галочку, чтобы скрыть публикацию.')
         },
     }
 
@@ -62,18 +61,18 @@ class PostAdmin(admin.ModelAdmin):
     )
     formfield_overrides = {
         models.BooleanField: {
-            'help_text': _("Снимите галочку, чтобы скрыть публикацию.")
+            'help_text': ('Снимите галочку, чтобы скрыть публикацию.')
         },
         models.SlugField: {
-            'help_text': _(
-                "Идентификатор страницы для URL; разрешены символы "
-                "латиницы, цифры, дефис и подчёркивание."
+            'help_text': (
+                'Идентификатор страницы для URL; разрешены символы '
+                'латиницы, цифры, дефис и подчёркивание.'
             )
         },
         models.DateTimeField: {
-            'help_text': _(
-                "Если установить дату и время в будущем — можно делать "
-                "отложенные публикации."
+            'help_text': (
+                'Если установить дату и время в будущем — можно делать '
+                'отложенные публикации.'
             )
         },
     }
